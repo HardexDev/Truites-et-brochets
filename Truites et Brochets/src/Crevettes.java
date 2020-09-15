@@ -11,5 +11,6 @@
 public class Crevettes {
     private int adultes;
     private int larves;
+    private int annee;
     
 }
