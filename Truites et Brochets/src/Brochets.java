@@ -20,7 +20,13 @@ public class Brochets {
     
     public Brochets(int unAn, int deuxAn, int troisAn, int quatreAn, int cinqAn, int sixAn, int septAn)
     {
-        
+        this.unAn = unAn;
+        this.deuxAn = deuxAn;
+        this.troisAn = troisAn;
+        this.quatreAn = quatreAn;
+        this.cinqAn = cinqAn;
+        this.sixAn = sixAn;
+        this.septAn = septAn;
     }
     
 }
