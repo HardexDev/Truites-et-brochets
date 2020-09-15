@@ -16,6 +16,7 @@ public class Brochets {
     private int cinqAn;
     private int sixAn;
     private int septAn;
+    private int annee;
     
 
     
