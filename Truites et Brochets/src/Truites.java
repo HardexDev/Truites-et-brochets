@@ -16,6 +16,13 @@ public class Truites {
     
     public Truites(int alevin, int jeune, int adulte)
     {
+        this.alevin=alevin;
+        this.jeune=jeune;
+        this.adulte=adulte;
+        annee=0;
+    }
+    
+    public void anneeSuivante(){
         
     }
 }
