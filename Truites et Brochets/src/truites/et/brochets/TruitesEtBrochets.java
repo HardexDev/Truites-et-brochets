@@ -5,6 +5,8 @@
  */
 package truites.et.brochets;
 
+import Truites.java;
+
 /**
  *
  * @author guifa
@@ -16,6 +18,7 @@ public class TruitesEtBrochets {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Truites truites1 = new Truites(0,0,100);
     }
     
 }
