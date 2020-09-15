@@ -14,4 +14,8 @@ public class Truites {
     private int adulte;
     private int annee;
     
+    public Truites(int alevin, int jeune, int adulte)
+    {
+        
+    }
 }

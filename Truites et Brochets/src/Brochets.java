@@ -18,6 +18,9 @@ public class Brochets {
     private int septAn;
     private int annee;
     
-
+    public Brochets(int unAn, int deuxAn, int troisAn, int quatreAn, int cinqAn, int sixAn, int septAn)
+    {
+        
+    }
     
 }

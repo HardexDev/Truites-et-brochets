@@ -13,4 +13,9 @@ public class Crevettes {
     private int larves;
     private int annee;
     
+    public Crevettes(int larves, int adulte)
+    {
+        
+    }
+    
 }
