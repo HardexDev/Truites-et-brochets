@@ -12,5 +12,6 @@ public class Truites {
     private int alevin;
     private int jeune;
     private int adulte;
+    private int annee;
     
 }
