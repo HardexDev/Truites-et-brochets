@@ -31,13 +31,13 @@ public class Truites {
         int adultes=adulte;
         
         //parce que sinon le programme est chiant avec les pourcents et les int
-        double jeunet;
-        double adultet;
+        float jeunet;
+        float adultet;
         
         //valeurs n+1
         alevin = adultes * 1500;
-        jeunet = alevins * 0.003;
-        adultet = adultes * 0.1 + jeunes * 0.3;
+        jeunet = alevins * 0.003f;
+        adultet = adultes * 0.1f + jeunes * 0.3f;
         
         //attribution pour les 2 valeurs reloues
         jeune = (int)jeunet;
