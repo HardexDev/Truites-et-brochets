@@ -13,7 +13,7 @@ public class Matrice {
     private int sizeX;
     private int sizeY;
     
-    private int[][] tab = new int[sizeX][sizeY];
+    private int[][] tab = new int[2][2];
     
     public Matrice(int sizeX, int sizeY){
         this.sizeX = sizeX;
@@ -29,12 +29,17 @@ public class Matrice {
     }
     
     public int[][] multiply(Matrice m){
-        int[][] res = new int[this.sizeX][this.sizeY];
-        for (int i = 0 ; i<this.sizeX ; i++){
-            for (int j = 0 ; j<this.sizeY ; j++){
+        int[][] res = new int[2][2];
+        for (int i = 0 ; i<2 ; i++){
+            for (int j = 0 ; j<2 ; j++){
                 res[i][j] = 0;
-                for (int k=0 ; k<sizeX ; k++){
-                    res[i][j] += this.tab[i][k]*m.getTab()[k][j];
+            }
+        }
+        
+        for (int i = 0 ; i<2 ; i++){
+            for (int j = 0 ; j<2 ; j++){
+                for (int k=0 ; k<2 ; k++){
+                    res[i][j] += (this.tab[i][k])*(m.tab[k][j]);
                 }
             }
         }
