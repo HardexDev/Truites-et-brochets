@@ -31,6 +31,16 @@ public class TruitesEtBrochets {
         
         truites1.ToString();
 
+        
+        Crevettes crevette1 = new Crevettes(0,1000);
+        crevette1.toString();
+        
+        for (int i=0; i<=5; i++){
+            crevette1.anneeSuivante();
+            crevette1.toString();
+
+        }
+        
     }
     
 }
