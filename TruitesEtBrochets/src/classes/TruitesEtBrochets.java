@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package truitesEtBrochets;
-
-import classes.Truites;
+package classes;
 
 /**
  *
@@ -19,6 +17,7 @@ public class TruitesEtBrochets {
     public static void main(String[] args) {
         // TODO code application logic here
         Truites truites1 = new Truites(0,0,100);
+        truites1.ToString();
     }
     
 }

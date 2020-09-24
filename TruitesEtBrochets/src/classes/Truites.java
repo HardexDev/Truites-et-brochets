@@ -47,7 +47,7 @@ public class Truites {
     }
     
     //affichage des valeurs pour l'année actuelle
-    public void Affichage (){
+    public void ToString (){
         System.out.println("Annee : "+annee);
         System.out.println("Nombre d'alevins : "+alevin);
         System.out.println("Nombre de jeunes : "+jeune);
