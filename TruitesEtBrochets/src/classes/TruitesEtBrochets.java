@@ -15,11 +15,15 @@ public class TruitesEtBrochets {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO code application logic here        
         Truites truites1 = new Truites(0,0,200);
-      
+           
         Crevettes crevette1 = new Crevettes(0,1000);
-      
+        
+        
+        
+        
+        
     }
     
 }
