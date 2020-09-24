@@ -10,14 +10,14 @@ package classes;
  * @author ar826955
  */
 public class Matrice {
-    private int sizeX;
-    private int sizeY;
+    private int numLines;
+    private int numCols;
     
-    private int[][] tab = new int[2][2];
+    private int[][] tab = new int[numLines][numCols];
     
-    public Matrice(int sizeX, int sizeY){
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
+    public Matrice(int lines, int cols){
+        this.numLines = lines;
+        this.numCols = cols;
     }
     
     public void setTab(int[][] tab){
