@@ -39,7 +39,7 @@ public class Crevettes {
         
     }
     
-    private void ToString()
+    public void ToString()
     {
         System.out.println("Annee : "+annee);
         System.out.println("Nombre de larves : "+larves);
