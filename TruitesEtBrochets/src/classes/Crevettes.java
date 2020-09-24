@@ -11,8 +11,8 @@ package classes;
  * @author guifa
  */
 public class Crevettes {
-    private float adultes;
-    private float larves;
+    private int adultes;
+    private int larves;
     private int annee;
     
     public Crevettes(int larves, int adultes)
@@ -28,12 +28,14 @@ public class Crevettes {
         float adulte = adultes;
         
         //Changement des valeurs à l'année n+1
-        larves = adultes * 40000;
-        adultes = adultes * 0.1f + larves * 0.0001f;
+        larve = adultes * 40000;
+        adulte = adultes * 0.1f + larves * 0.0001f;
         
         //Renvoie des valeurs changé
-        this.larves = larve;
-        this.adultes = adulte;        
+        this.larves = (int)larve;
+        this.adultes = (int)adulte;  
+        
+        annee += 1;
         
     }
     
