@@ -81,8 +81,8 @@ public class Crevettes {
         double valPropre2 = ((0.1+Math.sqrt(16.01))/2);
         tabD[0][0] = Math.pow(valPropre1, year);
         tabD[0][1] = 0;
-        tabD[1][0] = Math.pow(valPropre2, year);
-        tabD[1][1] = 0;
+        tabD[1][0] = 0;
+        tabD[1][1] = Math.pow(valPropre2, year);
         
         D.setTab(tabD);
         
@@ -90,9 +90,9 @@ public class Crevettes {
         Matrice PInverse = new Matrice(2,2);
         double[][] tabPInverse = new double[2][2];
         double a = (Math.sqrt(1601) + 1601)/3202;
-        double b = (400000*Math.sqrt(1601))/1601;
+        double b = -((400000*Math.sqrt(1601))/1601);
         double c = (Math.sqrt(1601) + 1601)/3202;
-        double d = -((400000*Math.sqrt(1601))/1601);
+        double d = (400000*Math.sqrt(1601))/1601;
         tabPInverse[0][0] = a;
         tabPInverse[0][1] = b;
         tabPInverse[1][0] = c;
@@ -120,11 +120,7 @@ public class Crevettes {
         // Multiplication finale (M^n * P0)
         res.setTab(M.multiply(P0));
         
-        return res;
-        
-        
-        
-        
+        return res; 
     }
     
     
