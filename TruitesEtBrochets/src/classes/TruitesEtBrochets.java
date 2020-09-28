@@ -5,7 +5,10 @@
  */
 package classes;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
 
 /**
@@ -19,32 +22,14 @@ public class TruitesEtBrochets {
      */
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
-       /*
-       double[][] tab1 = new double[2][2];
-       tab1[0][0] = 5;
-       tab1[0][1] = 3;
-       tab1[1][0] = 1;
-       tab1[1][1] = 2;
-       Matrice m1 = new Matrice(2,2);
-       m1.setTab(tab1);
-       
-       double[][] tab2 = new double[2][1];
-       tab2[0][0] = 1;
-       tab2[1][0] = 2;
-       
-       Matrice m2 = new Matrice(2,1);
-       m2.setTab(tab2);
-       
-       
-       Matrice res = new Matrice(2, 1);
-       res.setTab(m1.multiply(m2));
-       
-       res.printMatrix();
-       */
        
        Crevettes c = new Crevettes();
-       Matrice pop = c.getPopulationNumberReq(5);
-       System.out.println("Population à l'année 5:\n" + "Larves : " + pop.getTab()[0][0] + "\n" + "Adultes : " + pop.getTab()[1][0]);
+       NumberFormat nf = NumberFormat.getInstance();
+       for (int i = 0; i<30; i++){
+           Matrice pop = c.getPopulationNumberReq(i);
+           System.out.println("Population à l'année "+ i + " :\n" + "Larves : " + nf.format(Math.round(pop.getTab()[0][0])) + "\n" + "Adultes : " + nf.format(Math.round(pop.getTab()[1][0])));
+       }
+       
        
         
     }

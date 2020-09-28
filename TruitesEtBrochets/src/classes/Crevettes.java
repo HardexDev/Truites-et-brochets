@@ -40,7 +40,7 @@ public class Crevettes {
         
         //Renvoie des valeurs changé
         this.larves = (int)larve;
-        this.adultes = (int)adulte;  
+        this.adultes = (int)adulte;
         
         annee += 1;
         
