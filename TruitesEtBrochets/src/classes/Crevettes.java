@@ -1,5 +1,6 @@
 package classes;
 
+import java.text.NumberFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,45 +15,9 @@ import java.util.Set;
  * @author guifa
  */
 public class Crevettes {
-    private int adultes;
-    private int larves;
-    private int annee;
     
-    public Crevettes(int larves, int adultes)
-    {
-        this.adultes = adultes;
-        this.larves = larves;
-        this.annee = 0;
-    }
-    
-    public Crevettes(){
-        
-    }
-    
-    public void anneeSuivante(){
-        //Création de nouvelle variable pour stocker les nouvelles valeurs
-        float larve = larves;
-        float adulte = adultes;
-        
-        //Changement des valeurs à l'année n+1
-        larve = adultes * 40000;
-        adulte = adultes * 0.1f + larves * 0.0001f;
-        
-        //Renvoie des valeurs changé
-        this.larves = (int)larve;
-        this.adultes = (int)adulte;
-        
-        annee += 1;
-        
-    }
-    
-    public void ToString()
-    {
-        System.out.println("Annee : "+annee);
-        System.out.println("Nombre de larves : "+larves);
-        System.out.println("Nombre d'adultes : "+adultes);
-        
-    }
+    // Constructeur par défaut vide
+    public Crevettes() {}
     
     /**
      * Méthode qui nous donne la population à l'année n
@@ -160,6 +125,22 @@ public class Crevettes {
         return XnPlusUn;
         
         
+    }
+    
+    /**
+     * Affichage en console de la population de crevettes
+     * @return un string contenant toutes les informations
+     */
+    @Override
+    public String toString(){
+        String res = "";
+        NumberFormat nf = NumberFormat.getInstance();
+        for (int i = 0; i<=30; i++){
+           Matrice pop = this.getPopulationNumberReq(i);
+           res += "Population à l'année "+ i + " :\n" + "Larves : " + nf.format(Math.round(pop.getTab()[0][0])) + "\n" + "Crevettes : " + nf.format(Math.round(pop.getTab()[1][0])) + "\n";
+       }
+        
+        return res;
     }
     
 }

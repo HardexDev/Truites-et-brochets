@@ -23,12 +23,8 @@ public class TruitesEtBrochets {
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
        
-       Crevettes c = new Crevettes();
-       NumberFormat nf = NumberFormat.getInstance();
-       for (int i = 0; i<30; i++){
-           Matrice pop = c.getPopulationNumberReq(i);
-           System.out.println("Population à l'année "+ i + " :\n" + "Larves : " + nf.format(Math.round(pop.getTab()[0][0])) + "\n" + "Adultes : " + nf.format(Math.round(pop.getTab()[1][0])));
-       }
+       Brochets c = new Brochets();
+       System.out.println(c.toString());
        
        
         

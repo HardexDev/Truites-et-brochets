@@ -1,5 +1,7 @@
 package classes;
 
+import java.text.NumberFormat;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,53 +13,68 @@ package classes;
  * @author guifa
  */
 public class Truites {
-    private int alevin;
-    private int jeune;
-    private int adulte;
-    private int annee;
     
-    public Truites(int alevin, int jeune, int adulte)
-    {
-        this.alevin=alevin;
-        this.jeune=jeune;
-        this.adulte=adulte;
-        annee=0;
+    private double x = 0.08181818; // Correspond au quota de pêche annuel (ici 8%)
+    
+    public Truites(){}
+    
+    /**
+     * Méthode qui nous donne la population à l'année stop mais cette fois par récurrence
+     * @param stop --> jusqu'à quelle année on veut aller
+     * @return un vecteur avec la pop d'adultes, de jeunes et alevins à l'année stop
+     */
+    public Matrice getPopulationNumberReq(int stop){
+        Matrice M = new Matrice(3,3);
+        double[][] tabM = new double[3][3];
+        tabM[0][0] = 10/100.0 - x*10/100;
+        tabM[0][1] = 30/100.0 - x*30/100;
+        tabM[0][2] = 0;
+        tabM[1][0] = 0;
+        tabM[1][1] = 0;
+        tabM[1][2] = 0.3/100.0;
+        tabM[2][0] = 1500;
+        tabM[2][1] = 0;
+        tabM[2][2] = 0;
+        
+        M.setTab(tabM);
+        
+        
+        Matrice Xn = new Matrice(3,1);
+        double[][] tabXn = new double[3][1];
+        tabXn[0][0] = 200;
+        tabXn[1][0] = 0;
+        tabXn[2][0] = 0;
+        
+        Xn.setTab(tabXn);
+        
+        Matrice XnPlusUn = new Matrice(3,1);
+        double[][] tabXnPlusUn = new double[3][1];
+        tabXnPlusUn = tabXn;
+        XnPlusUn.setTab(tabXnPlusUn);
+        
+        for (int i = 1 ; i <= stop ; i++){
+            XnPlusUn.setTab(M.multiply(Xn));
+            Xn.setTab(XnPlusUn.getTab());
+        }
+        
+        return XnPlusUn;
     }
     
-    public void anneeSuivante(){
-        //"sauvegardes" valeurs année précédente
-        int alevins=alevin;
-        int jeunes=jeune;
-        int adultes=adulte;
+    /**
+     * Affichage en console de la population de crevettes
+     * @return un string contenant toutes les informations
+     */
+    @Override
+    public String toString(){
+        String res = "Quota de pêche de " + x*100 + "%\n";
+        NumberFormat nf = NumberFormat.getInstance();
+        for (int i = 0; i<=30; i++){
+           Matrice pop = this.getPopulationNumberReq(i);
+           res += "Population à l'année "+ i + " :\n" + "Adultes : " + nf.format(Math.round(pop.getTab()[0][0])) + "\n" + "Jeunes : " + nf.format(Math.round(pop.getTab()[1][0])) + "\n" + "Alevins : " + nf.format(Math.round(pop.getTab()[2][0])) + "\n";
+       }
         
-        //parce que sinon le programme est chiant avec les pourcents et les int
-        float jeunet;
-        float adultet;
-        
-        //valeurs n+1
-        alevin = adultes * 1500;
-        jeunet = alevins * 0.003f;
-        adultet = adultes * 0.1f + jeunes * 0.3f;
-        
-        //attribution pour les 2 valeurs reloues
-        jeune = (int)jeunet;
-        adulte = (int)adultet;
-        
-        annee += 1;
-    }
-    
-    //affichage des valeurs pour l'année actuelle
-    public void ToString (){
-        System.out.println("Annee : "+annee);
-        System.out.println("Nombre d'alevins : "+alevin);
-        System.out.println("Nombre de jeunes : "+jeune);
-        System.out.println("Nombre d'adultes : "+adulte);
-    }
-    
-    public void Reinitialisation (int alevin, int jeune, int adulte){
-        this.alevin=alevin;
-        this.jeune=jeune;
-        this.adulte=adulte;
-        annee=0;
+        return res;
     }
 }
+    
+    
