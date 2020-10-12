@@ -14,7 +14,7 @@ import java.text.NumberFormat;
  */
 public class Truites {
     
-    private double x = 0.08181818; // Correspond au quota de pêche annuel (ici 8%)
+    private double x = 0; // Correspond au quota de pêche annuel (ici 8% mais on trouve des résultats étranges)
     
     public Truites(){}
     
@@ -26,8 +26,8 @@ public class Truites {
     public Matrice getPopulationNumberReq(int stop){
         Matrice M = new Matrice(3,3);
         double[][] tabM = new double[3][3];
-        tabM[0][0] = 10/100.0 - x*10/100;
-        tabM[0][1] = 30/100.0 - x*30/100;
+        tabM[0][0] = 10/100.0 - x;
+        tabM[0][1] = 30/100.0 - x;
         tabM[0][2] = 0;
         tabM[1][0] = 0;
         tabM[1][1] = 0;
@@ -61,7 +61,7 @@ public class Truites {
     }
     
     /**
-     * Affichage en console de la population de crevettes
+     * Affichage en console de la population de truites
      * @return un string contenant toutes les informations
      */
     @Override

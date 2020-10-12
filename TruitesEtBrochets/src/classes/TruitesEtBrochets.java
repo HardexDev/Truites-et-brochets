@@ -23,8 +23,29 @@ public class TruitesEtBrochets {
     @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
        
-       Brochets c = new Brochets();
-       System.out.println(c.toString());
+       
+       Crevettes c = new Crevettes();
+       Truites t = new Truites();
+       Brochets b = new Brochets();
+       
+       Scanner sc = new Scanner(System.in);
+       System.out.println("Quelle population voulez vous étudier ? (Crevettes : c | Truites : t | Brochets : b");
+       String choix = sc.next();
+       
+       switch(choix){
+           case "c" :
+               System.out.println(c.toString());
+               break;
+           case "t" :
+               System.out.println(t.toString());
+               break;
+           case "b" :
+               System.out.println(b.toString());
+           default:
+               System.out.println("Cette population n'existe pas");
+               
+       }
+       
        
        
         

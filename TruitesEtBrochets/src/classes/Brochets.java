@@ -13,19 +13,20 @@ import java.text.NumberFormat;
  * @author guifa
  */
 public class Brochets {
+    private double x = 0.0005; // Correspond au quota de pêche approximatif pour les brochets
     
     public Brochets() {}
     
     /**
      * Méthode qui nous donne la population à l'année stop mais cette fois par récurrence
      * @param stop --> jusqu'à quelle année on veut aller
-     * @return un vecteur avec la pop d'adultes, de jeunes et alevins à l'année stop
+     * @return Un vecteur avec la population de brochets sur ses 7 années d'existance
      */
     public Matrice getPopulationNumberReq(int stop){
         Matrice M = new Matrice(8,8);
         double[][] tabM = new double[8][8];
         tabM[0][0] = 0;
-        tabM[0][1] = 0.25;
+        tabM[0][1] = 0.25 - x;
         tabM[0][2] = 0;
         tabM[0][3] = 0;
         tabM[0][4] = 0;
@@ -34,7 +35,7 @@ public class Brochets {
         tabM[0][7] = 0;
         tabM[1][0] = 0;
         tabM[1][1] = 0;
-        tabM[1][2] = 0.45;
+        tabM[1][2] = 0.45 - x;
         tabM[1][3] = 0;
         tabM[1][4] = 0;
         tabM[1][5] = 0;
@@ -44,7 +45,7 @@ public class Brochets {
         tabM[2][0] = 0;
         tabM[2][1] = 0;
         tabM[2][2] = 0;
-        tabM[2][3] = 0.45;
+        tabM[2][3] = 0.45 - x;
         tabM[2][4] = 0;
         tabM[2][5] = 0;
         tabM[2][6] = 0;
@@ -53,7 +54,7 @@ public class Brochets {
         tabM[3][1] = 0;
         tabM[3][2] = 0;
         tabM[3][3] = 0;
-        tabM[3][4] = 0.45;
+        tabM[3][4] = 0.45 - x;
         tabM[3][5] = 0;
         tabM[3][6] = 0;
         tabM[3][7] = 0;
@@ -62,7 +63,7 @@ public class Brochets {
         tabM[4][2] = 0;
         tabM[4][3] = 0;
         tabM[4][4] = 0;
-        tabM[4][5] = 0.45;
+        tabM[4][5] = 0.45 - x;
         tabM[4][6] = 0;
         tabM[4][7] = 0;
         tabM[5][0] = 0;
@@ -71,7 +72,7 @@ public class Brochets {
         tabM[5][3] = 0;
         tabM[5][4] = 0;
         tabM[5][5] = 0;
-        tabM[5][6] = 0.45;
+        tabM[5][6] = 0.45 - x;
         tabM[5][7] = 0;
         tabM[6][0] = 0;
         tabM[6][1] = 0;
@@ -80,7 +81,7 @@ public class Brochets {
         tabM[6][4] = 0;
         tabM[6][5] = 0;
         tabM[6][6] = 0;
-        tabM[6][7] = 0.002;
+        tabM[6][7] = 0.002 - x;
         tabM[7][0] = 0;
         tabM[7][1] = 0;
         tabM[7][2] = 2000;
@@ -119,6 +120,10 @@ public class Brochets {
         return XnPlusUn;
     }
     
+    /**
+     * Affichage en console de la population de brochets
+     * @return un string contenant toutes les informations
+     */
     @Override
     public String toString(){
         String res = "";
